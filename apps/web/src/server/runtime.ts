@@ -3,7 +3,7 @@ import { LocalStore, SupabaseStore, type JobRuntime } from "@vetor/core";
 import path from "node:path";
 
 export function dataDir() {
-  return path.resolve(process.cwd(), "../../", process.env.VETOR_DATA_DIR ?? ".data");
+  return path.resolve(/*turbopackIgnore: true*/ process.cwd(), "../../", process.env.VETOR_DATA_DIR ?? ".data");
 }
 
 export function isLocalRuntime() {
