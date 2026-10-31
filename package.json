@@ -1,0 +1,20 @@
+{
+  "name": "vetor",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.21.0",
+  "scripts": {
+    "dev": "pnpm --parallel --filter @vetor/web --filter @vetor/worker dev",
+    "dev:web": "pnpm --filter @vetor/web dev",
+    "dev:worker": "pnpm --filter @vetor/worker dev",
+    "build": "pnpm --filter @vetor/contracts build && pnpm --filter @vetor/core build && pnpm --filter @vetor/web build && pnpm --filter @vetor/worker build",
+    "lint": "pnpm -r --if-present lint",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "test:e2e": "pnpm --filter @vetor/web test:e2e",
+    "fixtures": "pnpm --filter @vetor/core fixtures"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  }
+}

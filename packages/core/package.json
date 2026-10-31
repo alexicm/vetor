@@ -1,0 +1,33 @@
+{
+  "name": "@vetor/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "fixtures": "tsx src/scripts/generate-fixtures.ts"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.80",
+    "@supabase/supabase-js": "^2.86.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "@vetor/contracts": "workspace:*",
+    "@visioncortex/vtracer": "1.0.0-alpha.4",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^5.4.296",
+    "sharp": "^0.34.5",
+    "svgo": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.8"
+  }
+}

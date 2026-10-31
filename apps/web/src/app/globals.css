@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f7f5;
+  --foreground: #111111;
+  --card: #ffffff;
+  --card-foreground: #111111;
+  --muted: #ecece8;
+  --muted-foreground: #5c5c57;
+  --border: #d9d9d2;
+  --accent: #ff5a1f;
+  --accent-foreground: #ffffff;
+  --ring: #ff5a1f;
+  --success: #17803d;
+  --danger: #c81e1e;
+  --checker-a: #ecece8;
+  --checker-b: #ffffff;
+}
+
+.dark {
+  --background: #0c0c0c;
+  --foreground: #f4f4f1;
+  --card: #161616;
+  --card-foreground: #f4f4f1;
+  --muted: #222222;
+  --muted-foreground: #b0b0a8;
+  --border: #2c2c2c;
+  --accent: #ff5a1f;
+  --accent-foreground: #111111;
+  --ring: #ff5a1f;
+  --success: #4ade80;
+  --danger: #f87171;
+  --checker-a: #1b1b1b;
+  --checker-b: #2a2a2a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.checkerboard {
+  background-color: var(--checker-b);
+  background-image: linear-gradient(45deg, var(--checker-a) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--checker-a) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--checker-a) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--checker-a) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+}
