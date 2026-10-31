@@ -7,7 +7,7 @@ SaaS de conversão, vetorização e preparação gráfica. A interface é em por
 - Node.js 20.11+
 - pnpm 11+
 
-Docker é opcional. Sem Docker, o app roda em modo local (arquivos em `.data/`). O Supabase local e os Vercel Daemons exigem Docker.
+Docker é opcional. Sem Docker, o app pode rodar em modo local (arquivos em `.data/`). O Supabase local e os Vercel Daemons exigem Docker.
 
 ## Instalação
 
@@ -19,6 +19,8 @@ pnpm dev
 ```
 
 Abra `http://localhost:3000`, crie uma conta e envie um PNG para vetorizar.
+
+Com as credenciais do Supabase no `.env.local` e `VETOR_RUNTIME=supabase`, o app usa o backend remoto.
 
 ## Comandos
 
@@ -45,16 +47,15 @@ docs/
 
 ## Supabase
 
-Quando tiver um projeto:
+O schema está em `supabase/migrations`. Depois de `supabase link` e `supabase db push`, preencha:
 
-1. Aplique `supabase/migrations`.
-2. Preencha `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` e `SUPABASE_SERVICE_ROLE_KEY`.
-3. Defina `VETOR_RUNTIME=supabase`.
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `VETOR_RUNTIME=supabase`
 
-Não coloque a service role em variável `NEXT_PUBLIC_*`.
+Nunca coloque a service role em variável `NEXT_PUBLIC_*`.
 
 ## Deploy
 
-A web vai para a Vercel com root `apps/web`. O worker fica de fora das rotas HTTP. Veja `docs/operations.md`.
-
-Não faça deploy sem autorização explícita.
+A web vai para a Vercel. O worker fica de fora das rotas HTTP. Veja `docs/operations.md`.
