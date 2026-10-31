@@ -20,7 +20,7 @@ export function SiteHeader({
         <ThemeToggle />
         {signedIn ? (
           <Link href="/app" className="rounded-md bg-accent px-3 py-2 text-accent-foreground">
-            Abrir estúdio
+            Abrir mesa
           </Link>
         ) : (
           <>

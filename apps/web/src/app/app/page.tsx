@@ -22,7 +22,7 @@ export default async function DashboardPage() {
       <Uploader />
       <div className="grid gap-6 md:grid-cols-3">
         {[
-          { href: "/app/estudio", title: "Estúdio", text: "Conversão, vetorização e geometria." },
+          { href: "/app/estudio", title: "Mesa de trabalho", text: "Prancheta, conversão, vetorização e geometria." },
           { href: "/app/pdf", title: "Ferramentas PDF", text: "Páginas, extração e combinação." },
           { href: "/app/historico", title: "Histórico", text: "Jobs, status e downloads." },
         ].map((item) => (
